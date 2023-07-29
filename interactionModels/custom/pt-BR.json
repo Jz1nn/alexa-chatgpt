@@ -1,0 +1,91 @@
+{
+  "interactionModel": {
+    "dialog": {
+      "intents": [
+        {
+          "slots": [
+            {
+              "name": "query_slot",
+              "elicitationRequired": true,
+              "type": "AMAZON.SearchQuery",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.query_slot.capture_query_intent.Or2JRJGTctfIaP5VhstMbtdNXLVCFoW2"
+              }
+            }
+          ],
+          "name": "capture_query_intent",
+          "confirmationRequired": false,
+          "prompts": {}
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "languageModel": {
+      "intents": [
+        {
+          "name": "AMAZON.RepeatIntent"
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.YesIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NoIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "slots": [
+            {
+              "name": "query_slot",
+              "type": "AMAZON.SearchQuery",
+              "samples": [
+                "{query_slot}"
+              ]
+            }
+          ],
+          "name": "capture_query_intent",
+          "samples": []
+        },
+        {
+          "name": "VoiceFlowIntent",
+          "samples": [
+            "Fluxo de voz"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        }
+      ],
+      "invocationName": "abrir chat"
+    },
+    "prompts": [
+      {
+        "variations": [
+          {
+            "type": "SSML",
+            "value": "\u003cspeak\u003e\u003c/speak\u003e"
+          }
+        ],
+        "id": "Elicit.Slot.query_slot.capture_query_intent.Or2JRJGTctfIaP5VhstMbtdNXLVCFoW2"
+      }
+    ]
+  }
+}
